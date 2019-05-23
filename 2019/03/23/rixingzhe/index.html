@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="日行者App产品需求文档">
+<meta property="og:url" content="http://yoursite.com/2019/03/23/rixingzhe/index.html">
+<meta property="og:site_name" content="Xu Yi">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/封面.jpeg">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/日行者功能结构.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/日行者信息结构.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/弹窗.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/toast.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/加载.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/空状态.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/登录.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/注册.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/忘记密码.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/动态.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/关注.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/发布.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/详情.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/服务.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/咨询.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/消息.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/聊天.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/我的.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/聊天.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/23/rixingzhe/其他.png">
+<meta property="og:updated_time" content="2019-05-23T15:37:18.433Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="日行者App产品需求文档">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/23/rixingzhe/封面.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/23/rixingzhe/"/>
+
+
+
+
+
+  <title>日行者App产品需求文档 | Xu Yi</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?719a92bd02eff244cf5a2f982b20606c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Xu Yi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/rixingzhe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Yi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu Yi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">日行者App产品需求文档</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T23:19:03+08:00">
+                2019-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2019/03/23/rixingzhe/封面.jpeg" alt="封面"><br><a id="more"></a></p>
+<h2 id="一、产品介绍"><a href="#一、产品介绍" class="headerlink" title="一、产品介绍"></a>一、产品介绍</h2><p>日行者APP旨在提供在日留学生更便利的生活服务，帮助用户快速获取资讯，例如租房、手机办理、WiFi办理等商家信息并同时提供交流社区的内容服务平台。</p>
+<h2 id="二、产品结构"><a href="#二、产品结构" class="headerlink" title="二、产品结构"></a>二、产品结构</h2><h3 id="2-1-产品功能结构"><a href="#2-1-产品功能结构" class="headerlink" title="2.1 产品功能结构"></a>2.1 产品功能结构</h3><p><img src="/2019/03/23/rixingzhe/日行者功能结构.png" alt="功能"></p>
+<h3 id="2-2-产品信息结构"><a href="#2-2-产品信息结构" class="headerlink" title="2.2 产品信息结构"></a>2.2 产品信息结构</h3><p><img src="/2019/03/23/rixingzhe/日行者信息结构.png" alt="信息"></p>
+<h2 id="三、全局说明"><a href="#三、全局说明" class="headerlink" title="三、全局说明"></a>三、全局说明</h2><h3 id="3-1-功能权限"><a href="#3-1-功能权限" class="headerlink" title="3.1 功能权限"></a>3.1 功能权限</h3><ol>
+<li>登录状态下可以进行所有操作</li>
+<li>未登录状态不可以进行消息，我的，社区的关注、评论以及点赞。要进行上述操作需要跳转到登录页面进行登录。<h3 id="3-2-页面内交互"><a href="#3-2-页面内交互" class="headerlink" title="3.2 页面内交互"></a>3.2 页面内交互</h3><h4 id="3-2-1-弹窗"><a href="#3-2-1-弹窗" class="headerlink" title="3.2.1 弹窗"></a>3.2.1 弹窗</h4><img src="/2019/03/23/rixingzhe/弹窗.png" alt="弹窗"></li>
+</ol>
+<ul>
+<li>确认框：居中显示（1）关闭弹窗，返回原页面；（2）前往指定页面</li>
+<li>底部选择弹窗：从底部向上滑出（1）选项；（2）取消键，点击关闭或者点击页面其他区域关闭，关闭向下滑动关闭</li>
+</ul>
+<h4 id="3-2-2-Toast"><a href="#3-2-2-Toast" class="headerlink" title="3.2.2 Toast"></a>3.2.2 Toast</h4><p><img src="/2019/03/23/rixingzhe/toast.png" alt="tosat"></p>
+<ul>
+<li>Toast提示：居中显示，显示时间1s，1s后结束</li>
+</ul>
+<h4 id="3-2-3-加载刷新"><a href="#3-2-3-加载刷新" class="headerlink" title="3.2.3 加载刷新"></a>3.2.3 加载刷新</h4><p><img src="/2019/03/23/rixingzhe/加载.png" alt="加载刷新"></p>
+<ul>
+<li>进入页面时的加载状态</li>
+<li>页面下拉刷新：顺序从1到3，顶部位置</li>
+</ul>
+<h3 id="3-3-页面异常"><a href="#3-3-页面异常" class="headerlink" title="3.3 页面异常"></a>3.3 页面异常</h3><p><img src="/2019/03/23/rixingzhe/空状态.png" alt="空状态"></p>
+<p>从左到右页面的对应的异常情况如下：</p>
+<ul>
+<li>无数据页面</li>
+<li>加载失败页面</li>
+<li>网络异常页面，点击刷新时，页面重新加载</li>
+</ul>
+<h2 id="四、详细功能说明"><a href="#四、详细功能说明" class="headerlink" title="四、详细功能说明"></a>四、详细功能说明</h2><h3 id="4-1-登录-注册页"><a href="#4-1-登录-注册页" class="headerlink" title="4.1 登录/注册页"></a>4.1 登录/注册页</h3><h4 id="4-1-1-登录"><a href="#4-1-1-登录" class="headerlink" title="4.1.1 登录"></a>4.1.1 登录</h4><p><img src="/2019/03/23/rixingzhe/登录.png" alt="登录"></p>
+<ol>
+<li>手机号输入框，获得焦点提示字符消失，向上滑动调出数字键盘</li>
+<li>密码输入框</li>
+<li>登录按钮，当手机号和密码输入完全时可用。异常提示：<ul>
+<li>未填写手机号或密码：请填写手机号和密码</li>
+<li>填写的手机尚未注册：手机号尚未注册</li>
+<li>手机号已注册但密码错误：密码错误</li>
+<li>网络问题：请检查网络连接</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-1-2-注册"><a href="#4-1-2-注册" class="headerlink" title="4.1.2 注册"></a>4.1.2 注册</h4><p><img src="/2019/03/23/rixingzhe/注册.png" alt="注册"></p>
+<p>点击注册标签进入注册页面，点击输入框获得焦点，提示字符消失，向上滑动调出键盘</p>
+<ol>
+<li>手机输入框，支持数字输入，需要选择对应的地区码</li>
+<li>获取验证码，点击后60s内不可用，倒计时结束后变为可用，按钮文字变为“获取验证码”</li>
+<li>密码输入框，支持输入6-20位字符，支持输入字母、数字以及字符</li>
+<li>输入昵称，昵称可为英文、中文或数字</li>
+</ol>
+<h4 id="4-1-3-重置密码"><a href="#4-1-3-重置密码" class="headerlink" title="4.1.3 重置密码"></a>4.1.3 重置密码</h4><p><img src="/2019/03/23/rixingzhe/忘记密码.png" alt="忘记密码"></p>
+<ol>
+<li>获得焦点提示字符消失，向上滑动调出数字键盘</li>
+<li>60s内不可用，倒计时结束后变为可用，获取验证码按钮</li>
+<li>获取焦点时，提示字符消失，向上滑动调出密码键盘</li>
+<li>验证码非空且密码输入完成（满足6~20位密码要求）时，确定按钮显示可用</li>
+<li>异常提示：<ul>
+<li>验证码错误：验证码填写错误</li>
+<li>密码超过字数限制，系统自动删除：超过字数限制</li>
+<li>网络异常：请检查网络连接</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-2-社区"><a href="#4-2-社区" class="headerlink" title="4.2 社区"></a>4.2 社区</h3><h4 id="4-2-1-社区动态"><a href="#4-2-1-社区动态" class="headerlink" title="4.2.1 社区动态"></a>4.2.1 社区动态</h4><p><img src="/2019/03/23/rixingzhe/动态.png" alt="动态"></p>
+<ol>
+<li>点击全部，下方滑出标签模块，显示所有标签，同时只能选择一个标签，选中标签后，标签高亮显示，标签选择模块上滑消失，同时社区里的内容切换到包含此标签的动态</li>
+<li>跳转到我的关注页面，具体看4.2.2</li>
+<li>发布动态icon，点击跳转至动态发布页</li>
+<li>关注按钮，可关注该动态的用户</li>
+<li>点击赞，爱心高亮并后方的数字加1，再次点击高亮消失，且后方数字减1</li>
+<li>点击跳转至动态评论页</li>
+<li>用户头像，点击可查看该用户的个人主页</li>
+<li>点击动态内容区域以及空白区域可跳转到动态详情页</li>
+</ol>
+<h4 id="4-2-2-我的关注"><a href="#4-2-2-我的关注" class="headerlink" title="4.2.2 我的关注"></a>4.2.2 我的关注</h4><p><img src="/2019/03/23/rixingzhe/关注.png" alt="关注"></p>
+<ul>
+<li>无关注人时，显示无内容的空页面</li>
+<li>有关注人时，已关注的用户未发表任何动态，也显示无内容的空页面</li>
+<li>有关注人时，已关注用户发表的动态按是时间顺序排，发布时间较近的排在前面</li>
+<li>每个动态显示用户的头像、昵称、标签以及对应的内容</li>
+</ul>
+<h4 id="4-2-3-发布动态"><a href="#4-2-3-发布动态" class="headerlink" title="4.2.3 发布动态"></a>4.2.3 发布动态</h4><p><img src="/2019/03/23/rixingzhe/发布.png" alt="发布"></p>
+<ol>
+<li>动态内容区及添加照片，点击添加照片，打开系统相册，需要开启访问系统相册权限，未开启日行者APP读取照片的权限时，弹出提示框，内容显示“未开通读取照片的权限，是否开通”；照片最多可添加9张</li>
+<li>多选分类标签可同时选择一至三个<br>单选分类标签只可选择一个，选中标签高亮显示</li>
+<li>点击发布，动态内容将上传到个人主页同时展示在社区首页</li>
+</ol>
+<h4 id="4-2-4-动态详情"><a href="#4-2-4-动态详情" class="headerlink" title="4.2.4 动态详情"></a>4.2.4 动态详情</h4><p><img src="/2019/03/23/rixingzhe/详情.png" alt="详情"></p>
+<ul>
+<li>从社区点击用户动态进入动态详情页面，可查看动态详情内容、评论以及评论回复</li>
+<li>点击底部输入框，向上滑出键盘，最多可写140个字符，点击页面空白区域可隐藏键盘</li>
+</ul>
+<h3 id="4-3-服务"><a href="#4-3-服务" class="headerlink" title="4.3 服务"></a>4.3 服务</h3><h4 id="4-3-1-服务首页"><a href="#4-3-1-服务首页" class="headerlink" title="4.3.1 服务首页"></a>4.3.1 服务首页</h4><p><img src="/2019/03/23/rixingzhe/服务.png" alt="服务"></p>
+<ol>
+<li>进入服务页后，下方的服务标签高亮处理上方6个分类，点击相应的服务分类，进入服务列表</li>
+<li>推荐服务，由后台配置推荐服务</li>
+</ol>
+<h4 id="4-3-2-服务详情"><a href="#4-3-2-服务详情" class="headerlink" title="4.3.2 服务详情"></a>4.3.2 服务详情</h4><p><img src="/2019/03/23/rixingzhe/咨询.png" alt="咨询"></p>
+<ul>
+<li>进入服务详情，查看服务内容，包括轮播图、详情、价格，以及推荐套餐，推荐套餐由后台配置</li>
+<li>轮播图5s一张向右进行切换</li>
+<li>点击收藏将此商家加入我的收藏</li>
+<li>点击立刻咨询跳转至聊天框并自动发送信息至客服<h3 id="4-4-消息"><a href="#4-4-消息" class="headerlink" title="4.4 消息"></a>4.4 消息</h3><h4 id="4-4-1-系统消息"><a href="#4-4-1-系统消息" class="headerlink" title="4.4.1 系统消息"></a>4.4.1 系统消息</h4><img src="/2019/03/23/rixingzhe/消息.png" alt="消息"></li>
+<li>消息列表，如有未读的消息，右方显示小红点，点击进入消息详情页并退出之后小红点消失</li>
+<li>消息列表第一位默认为系统消息，进入系统消息页面显示所有的未读新消息，点击新消息之后切换到相关的页面，点击关注人，则进入对方的个人主页，点击评论或者点赞则进入该动态的详情页<h4 id="4-4-2-聊天消息"><a href="#4-4-2-聊天消息" class="headerlink" title="4.4.2 聊天消息"></a>4.4.2 聊天消息</h4><img src="/2019/03/23/rixingzhe/聊天.png" alt="聊天"></li>
+<li>点击私信消息，进入聊天界面</li>
+<li>点击聊天输入框右边的语音按钮可以切换至语音输入</li>
+<li>点击输入框右侧的笑脸进入表情，点击加号则显示发送照片或者拍摄</li>
+<li>聊天设置：<ul>
+<li>选择置顶聊天，则在聊天列表中系统消息的下方按照置顶时间的先后顺序依次排列。取消置顶都将不在对该联系人优先排列，默认消息时间先后排列。</li>
+<li>选择屏蔽消息，则该联系人所发送的消息不做提醒，只在聊天列表中显示红点。取消后正常消息提醒。</li>
+<li>点亮加入黑名单，则不再接受到该联系人的信息，对方发送信息时将会收到提示。取消后不收到之前未发送的信息，新的信息正常接收。<h3 id="4-5-我的"><a href="#4-5-我的" class="headerlink" title="4.5 我的"></a>4.5 我的</h3><h4 id="4-5-1-个人主页"><a href="#4-5-1-个人主页" class="headerlink" title="4.5.1 个人主页"></a>4.5.1 个人主页</h4><img src="/2019/03/23/rixingzhe/我的.png" alt="我的"></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>我的页面，可以查看关注以及粉丝数，点击进去可看具体的用户</li>
+<li>点击头像进入个人信息设置</li>
+<li>个人主页，照片墙显示我发布的动态中所有的照片，动态即用户发送的内容和图片，其他用户可以查看“我的”主页<h4 id="4-5-2-个人信息"><a href="#4-5-2-个人信息" class="headerlink" title="4.5.2 个人信息"></a>4.5.2 个人信息</h4><img src="/2019/03/23/rixingzhe/聊天.png" alt="信息"></li>
+</ol>
+<p>点击我的页面的头像进入个人设置，可对个人的信息进行修改，包括头像、昵称、签名等。</p>
+<h4 id="4-5-3-其他功能"><a href="#4-5-3-其他功能" class="headerlink" title="4.5.3 其他功能"></a>4.5.3 其他功能</h4><p><img src="/2019/03/23/rixingzhe/其他.png" alt="其他功能"></p>
+<ul>
+<li>我的收藏，展示收藏的服务列表，顶部有四个服务分类标签</li>
+<li>关于我们，显示版本号等信息，在该页面可以退出登录</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/14/qqreading/" rel="next" title="QQ阅读产品分析报告">
+                <i class="fa fa-chevron-left"></i> QQ阅读产品分析报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.png"
+                alt="Xu Yi" />
+            
+              <p class="site-author-name" itemprop="name">Xu Yi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、产品介绍"><span class="nav-number">1.</span> <span class="nav-text">一、产品介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、产品结构"><span class="nav-number">2.</span> <span class="nav-text">二、产品结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-产品功能结构"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 产品功能结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-产品信息结构"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 产品信息结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、全局说明"><span class="nav-number">3.</span> <span class="nav-text">三、全局说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-功能权限"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 功能权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-页面内交互"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 页面内交互</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-弹窗"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 弹窗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-Toast"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 Toast</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-加载刷新"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.2.3 加载刷新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-页面异常"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 页面异常</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、详细功能说明"><span class="nav-number">4.</span> <span class="nav-text">四、详细功能说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-登录-注册页"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 登录/注册页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-登录"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1 登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-注册"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2 注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-3-重置密码"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3 重置密码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-社区"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 社区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-社区动态"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1 社区动态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-我的关注"><span class="nav-number">4.2.2.</span> <span class="nav-text">4.2.2 我的关注</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3-发布动态"><span class="nav-number">4.2.3.</span> <span class="nav-text">4.2.3 发布动态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-4-动态详情"><span class="nav-number">4.2.4.</span> <span class="nav-text">4.2.4 动态详情</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-服务"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 服务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-1-服务首页"><span class="nav-number">4.3.1.</span> <span class="nav-text">4.3.1 服务首页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-2-服务详情"><span class="nav-number">4.3.2.</span> <span class="nav-text">4.3.2 服务详情</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-消息"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-1-系统消息"><span class="nav-number">4.4.1.</span> <span class="nav-text">4.4.1 系统消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4-2-聊天消息"><span class="nav-number">4.4.2.</span> <span class="nav-text">4.4.2 聊天消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-我的"><span class="nav-number">4.5.</span> <span class="nav-text">4.5 我的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-1-个人主页"><span class="nav-number">4.5.1.</span> <span class="nav-text">4.5.1 个人主页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-2-个人信息"><span class="nav-number">4.5.2.</span> <span class="nav-text">4.5.2 个人信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-3-其他功能"><span class="nav-number">4.5.3.</span> <span class="nav-text">4.5.3 其他功能</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xu Yi</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
